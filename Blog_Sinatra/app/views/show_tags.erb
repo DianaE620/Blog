@@ -1,0 +1,60 @@
+<div class="header">
+  <br>
+  <div style="font-size:1.4em;"><%=@tag%>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </div>
+  <br>
+  <div>mytags.com</div>
+</div>
+
+<div class="sep"></div>
+
+<div class="line"></div>
+
+
+<div class="posts">
+
+<div class="textom">Posts:</div>
+<br>
+<% unless @posts.empty? %>
+  <% @posts.each do |po| %>
+    <div class="textom"> <%=po.title %></div>
+    <br>
+    <div> <%=po.body %></div>
+    <br>
+    <div> Autor: <%=po.author %></div>
+    <br>
+    <% tags = [] %>
+    <% po.tags.each do |t| %>
+      <% tags << t.name %>
+    <% end %>
+    <div style="color:white;">Tags: <%= tags.join(", ")%>
+    </div>
+    <br>
+    <a href='/post/<%="#{po.id}"%>' class="regresar">
+  Ir al Post</a>
+  <br><br>
+    <div class="line2"></div>
+    <br>
+  <% end %>
+  <% else %>
+  <div class="sinpost"> 
+    Esta Tag no tiene ningún post.
+    <i class="fa fa-frown-o" aria-hidden="true"></i>
+  
+  <br><br>
+  <a href="/" class="regresar">Inicia un tema!!</a>
+  <i class="fa fa-smile-o" aria-hidden="true" 
+  style="color:white; font-size:1.5em;"></i>
+  </div>
+  <br><br>
+<% end %>
+  
+</div>
+
+<br><br>
+<a href="/" class="regresar">Página Principal</a>
+<br><br>

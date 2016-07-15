@@ -1,0 +1,113 @@
+<div class="header">
+  <br>
+  <div style="font-size:1.4em;">Welcome to my Blog!
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </div>
+  <br>
+  <div>mytags.com</div>
+</div>
+<div class="sep"></div>
+
+<div class="line"></div>
+
+<div class="busquedas">
+<form method="post" action="/tag">
+Busqueda de Post por Tags
+<input type="text" name="tag"> 
+<input type="submit" 
+value="Buscar">
+</form>
+</div>
+
+<div class="line"></div>
+
+<div class="posts">
+
+<div class="textom"> Ultimos Posts:</div>
+<br>
+<% if @posts %>
+  <% @posts.each do |po| %>
+    <div class="textom"> <%=po.title %></div>
+    <br>
+    <div> <%=po.body %></div>
+    <br>
+    <div> Autor: <%=po.author %></div>
+    <br>
+    <% tags = [] %>
+    <% po.tags.each do |t| %>
+      <% tags << t.name %>
+    <% end %>
+    <div style="color:white;">Tags: <%= tags.join(", ")%>
+    </div>
+    <br>
+    <a href='/post/<%="#{po.id}"%>' class="regresar">
+  Ir al Post</a>
+  <br><br>
+    <div class="line2"></div>
+    <br>
+  <% end %>
+<% end %>
+  
+</div>
+
+<div class="line"></div>
+
+<div class="form_new">
+<div class="textom">Crea un nuevo Post</div><br><br>
+
+<form method="post" action="/post">
+
+  Titulo: <br>
+  <input placeholder="Ingresa el titulo" class="inpu_tit" type="text"
+  name="titulo"><br><br>
+
+  Contenido: <br>
+  <textarea placeholder="Ingresa el contenido del post" rows="9"
+  name="body"></textarea><br><br>
+
+  <br>
+  <label>Tags:</label>
+  <input id="post_tags" name="tags" placeholder="Ingresa tus tags"
+  style="width:500px">
+  <br>
+  <span class="ejemplo">Ej: videojuegos,salud,moda,política</span>
+  <br><br>
+
+  Autor: <br>
+  <input placeholder="Ingresa tu nombre" type="text"
+  name="autor"><br><br>
+
+  <input type="submit" value="Enviar"> 
+
+</form>
+
+<% if @error%>
+  <br>
+  <div class="error">Alguno de los datos ingresados es incorrecto</div>
+  <div class="error">Recuerda que el titulo y contenido del post son obligatorios</div>
+  <br>
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+body {
+  background-color: #383A3F;
+}
+
+.container {
+  margin: 20px auto;
+  width: 900px;
+ /* padding: 0px 20px 20px 20px;*/
+  border: 5px solid white;
+  border-radius: 7px;
+  
+}
+
+th {
+  text-align: left;
+}
+
+ 
+.header {
+  padding: 0;
+  margin-top: 20px;
+  color: white;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  font-size: 1.4em;
+  background-color: #4FB0C6;
+}
+
+.line {
+  background-color: white;
+  height: 8px;
+}
+
+.line2 {
+  background-color: #383A3F;
+  height: 2px;
+}
+
+.textom {
+  color: #383A3F;
+  font-size: 1.4em;
+  color: white;
+}
+
+.posts {
+  padding:15px;
+  color: #383A3F;
+  background-color: #4FB0C6;
+  font-size: 1em;
+  text-align: justify;
+}
+
+.sep{
+  background-color: #383A3F;
+  height: 20px;
+}
+
+.form_new {
+  border: 4px solid white;
+  border-radius: 7px;
+  width: 90%;
+  
+  margin: 20px;
+  padding: 10px;
+  padding-left: 40px;
+  margin: 20px auto;
+  background-color: #4FB0C6;
+}
+
+textarea {
+  width: 700px;
+}
+
+.inpu_tit {
+  width: 600px;
+}
+
+.ejemplo {
+  font-size: .9em;
+  color: #6E7783;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.addpad {
+  padding: 30px;
+}
+
+.regresar {
+  color: white;
+  text-decoration: none;
+  padding-left: 20px;
+  font-size: 1.1em;
+}
+
+.busquedas {
+  background-color: #4FB0C6;
+  color: #383A3F;
+  padding: 30px;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+.sinpost {
+  font-size: 1.4em;
+}
+
+
+
+
+
+

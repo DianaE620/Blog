@@ -1,0 +1,61 @@
+<div class="header">
+  <br>
+  <div style="font-size:1.2em;">
+    <%= @post.title %>
+  </div>
+  <br>
+  <div>mytags.com</div>
+</div>
+<div class="sep"></div>
+
+<div class="line"></div>
+
+<div class="posts addpad">
+
+  <div><%= @post.body %></div>
+  <br>
+  <div><%= @post.author %></div>
+  <br>
+
+  <% tags = [] %>
+    <% @post.tags.each do |t| %>
+      <% tags << t.name %>
+    <% end %>
+    <div style="color:white;">Tags: <%= tags.join(", ")%>
+    </div>
+
+  <br>
+  <div class="line2"></div>
+  <br>
+</div>
+  <div class="line"></div>
+
+<div class="form_new">
+
+  <form>
+
+    <br><br>
+    Nombre:<br> 
+    <input type="text" placeholder="Agrega tu nombre">
+    <br><br> 
+    Comentarios:<br>
+    <textarea rows="3" placeholder="Escribe tu opinión"></textarea>
+    <br><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+</div>
+
+<a href="/" class="regresar">Página Principal</a>
+<a href='/post/<%="#{@id}"%>/edit' class="regresar">
+  Editar Post</a>
+
+ 
+<a href= '/post/<%="#{@id}"%>/delete' class="regresar">
+  Eliminar Post</a>
+<br><br>
+
+
+
+
+

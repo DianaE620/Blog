@@ -1,0 +1,72 @@
+<div class="header">
+  <br>
+  <div style="font-size:1.2em;">
+    Edita tu Post
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </div>
+  <br>
+  <div>mytags.com</div>
+</div>
+<div class="sep"></div>
+
+<div class="line"></div>
+
+<div class="form_new">
+
+<form method="post" action='/post/<%="#{@id}"%>/edit'>
+
+  Titulo: <br>
+  <input class="inpu_tit" type="text"
+  name="titulo"
+  value="<%= @post.title %>"><br><br>
+
+  Contenido: <br>
+  <textarea rows="9"
+  name="body"><%= @post.body %></textarea><br><br>
+
+  <br>
+  <label>Tags:</label>
+    <% array_tags = [] %>
+    <% @tags.each {|t| array_tags << t.name } %>
+  <input id="post_tags" name="tags"
+  style="width:500px" value="<%= array_tags.join(",")%>">
+  <br>
+  <span class="ejemplo">Ej: videojuegos,salud,moda,política</span>
+  <br><br>
+
+  Autor: <br>
+  <input placeholder="Ingresa tu nombre" type="text"
+  name="autor" value="<%= @post.author %>"><br><br>
+
+  <input type="submit" value="Enviar"> 
+
+</form>
+
+<% if @error%>
+  <br>
+  <div class="error">Alguno de los datos ingresados es incorrecto</div>
+  <div class="error">Recuerda que el titulo y contenido del post son obligatorios</div>
+  <br>
+<% end %>
+
+</div>
+
+<a href="/" class="regresar">Página Principal</a>
+
+<a href='/post/<%="#{@id}"%>' class="regresar">
+  Regresar</a>
+
+  <br><br>
+
+
+
+
+
+
+
+
+
+
